@@ -24,7 +24,7 @@ class SentenceGetter(object):
         agg_func = lambda s: [(w, t) for w, t in zip(s["Word"].values.tolist(), s["Tag"].values.tolist())]
         
         # first group by the sentence number and then apply tuples to them (see below)
-        self.grouped = self.data.groupby("Sentence #").apply(agg_func)
+        self.grouped = self.data.groupby("SentenceNumber").apply(agg_func)
         
         # put sentences (tuples) in a list
         self.sentences = [s for s in self.grouped]
