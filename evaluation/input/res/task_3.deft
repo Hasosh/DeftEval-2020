@@ -11748,7 +11748,7 @@ experiences	data/source_txt/t4_psychology_1_101.deft	22516.0	22527.0	I-Definitio
 						-1	0
 Together	data/source_txt/t4_psychology_1_101.deft	22537.0	22545.0	O	-1	-1	0
 ,	data/source_txt/t4_psychology_1_101.deft	22545.0	22546.0	O	-1	-1	0
-these	data/source_txt/t4_psychology_1_101.deft	22547.0	22552.0	B-Referential-Definition	T150	T149	Refers-To
+these	data/source_txt/t4_psychology_1_101.deft	22547.0	22552.0	B-Referential-Definition	T150	T151	Indirect-Defines
 are	data/source_txt/t4_psychology_1_101.deft	22553.0	22556.0	O	-1	-1	0
 known	data/source_txt/t4_psychology_1_101.deft	22557.0	22562.0	O	-1	-1	0
 as	data/source_txt/t4_psychology_1_101.deft	22563.0	22565.0	O	-1	-1	0
@@ -11760,7 +11760,7 @@ emotion	data/source_txt/t4_psychology_1_101.deft	22584.0	22591.0	I-Term	T151	-1	
 						-1	0
 Together	data/source_txt/t4_psychology_1_101.deft	22537.0	22545.0	O	-1	-1	0
 ,	data/source_txt/t4_psychology_1_101.deft	22545.0	22546.0	O	-1	-1	0
-these	data/source_txt/t4_psychology_1_101.deft	22547.0	22552.0	B-Referential-Definition	T150	T151	Indirect-Defines
+these	data/source_txt/t4_psychology_1_101.deft	22547.0	22552.0	B-Referential-Definition	T150	T149	Refers-To
 are	data/source_txt/t4_psychology_1_101.deft	22553.0	22556.0	O	-1	-1	0
 known	data/source_txt/t4_psychology_1_101.deft	22557.0	22562.0	O	-1	-1	0
 as	data/source_txt/t4_psychology_1_101.deft	22563.0	22565.0	O	-1	-1	0
@@ -14867,12 +14867,12 @@ Exports?Recall	data/source_txt/t5_economic_2_202.deft	4682.0	4696.0	O	-1	-1	0
 that	data/source_txt/t5_economic_2_202.deft	4697.0	4701.0	O	-1	-1	0
 exports	data/source_txt/t5_economic_2_202.deft	4702.0	4709.0	B-Term	T17	-1	0
 are	data/source_txt/t5_economic_2_202.deft	4710.0	4713.0	O	-1	-1	0
-products	data/source_txt/t5_economic_2_202.deft	4714.0	4722.0	B-Definition	T18	T19	Direct-Defines
-produced	data/source_txt/t5_economic_2_202.deft	4723.0	4731.0	I-Definition	T18	T19	Direct-Defines
-domestically	data/source_txt/t5_economic_2_202.deft	4732.0	4744.0	I-Definition	T18	T19	Direct-Defines
-and	data/source_txt/t5_economic_2_202.deft	4745.0	4748.0	I-Definition	T18	T19	Direct-Defines
-sold	data/source_txt/t5_economic_2_202.deft	4749.0	4753.0	I-Definition	T18	T19	Direct-Defines
-abroad	data/source_txt/t5_economic_2_202.deft	4754.0	4760.0	I-Definition	T18	T19	Direct-Defines
+products	data/source_txt/t5_economic_2_202.deft	4714.0	4722.0	B-Definition	T18	T17	Direct-Defines
+produced	data/source_txt/t5_economic_2_202.deft	4723.0	4731.0	I-Definition	T18	T17	Direct-Defines
+domestically	data/source_txt/t5_economic_2_202.deft	4732.0	4744.0	I-Definition	T18	T17	Direct-Defines
+and	data/source_txt/t5_economic_2_202.deft	4745.0	4748.0	I-Definition	T18	T17	Direct-Defines
+sold	data/source_txt/t5_economic_2_202.deft	4749.0	4753.0	I-Definition	T18	T17	Direct-Defines
+abroad	data/source_txt/t5_economic_2_202.deft	4754.0	4760.0	I-Definition	T18	T17	Direct-Defines
 while	data/source_txt/t5_economic_2_202.deft	4761.0	4766.0	O	-1	-1	0
 imports	data/source_txt/t5_economic_2_202.deft	4767.0	4774.0	B-Term	T19	-1	0
 are	data/source_txt/t5_economic_2_202.deft	4775.0	4778.0	O	-1	-1	0
@@ -16367,14 +16367,14 @@ sex	data/source_txt/t6_sociology_1_101.deft	13766.0	13769.0	I-Definition	T77	T78
 ;	data/source_txt/t6_sociology_1_101.deft	13769.0	13770.0	O	-1	-1	0
 homosexuality	data/source_txt/t6_sociology_1_101.deft	13771.0	13784.0	B-Term	T78	-1	0
 ,	data/source_txt/t6_sociology_1_101.deft	13784.0	13785.0	O	-1	-1	0
-the	data/source_txt/t6_sociology_1_101.deft	13786.0	13789.0	B-Definition	T79	T80	Direct-Defines
-attraction	data/source_txt/t6_sociology_1_101.deft	13790.0	13800.0	I-Definition	T79	T80	Direct-Defines
-to	data/source_txt/t6_sociology_1_101.deft	13801.0	13803.0	I-Definition	T79	T80	Direct-Defines
-individuals	data/source_txt/t6_sociology_1_101.deft	13804.0	13815.0	I-Definition	T79	T80	Direct-Defines
-of	data/source_txt/t6_sociology_1_101.deft	13816.0	13818.0	I-Definition	T79	T80	Direct-Defines
-the	data/source_txt/t6_sociology_1_101.deft	13819.0	13822.0	I-Definition	T79	T80	Direct-Defines
-same	data/source_txt/t6_sociology_1_101.deft	13823.0	13827.0	I-Definition	T79	T80	Direct-Defines
-sex	data/source_txt/t6_sociology_1_101.deft	13828.0	13831.0	I-Definition	T79	T80	Direct-Defines
+the	data/source_txt/t6_sociology_1_101.deft	13786.0	13789.0	B-Definition	T79	T78	Direct-Defines
+attraction	data/source_txt/t6_sociology_1_101.deft	13790.0	13800.0	I-Definition	T79	T78	Direct-Defines
+to	data/source_txt/t6_sociology_1_101.deft	13801.0	13803.0	I-Definition	T79	T78	Direct-Defines
+individuals	data/source_txt/t6_sociology_1_101.deft	13804.0	13815.0	I-Definition	T79	T78	Direct-Defines
+of	data/source_txt/t6_sociology_1_101.deft	13816.0	13818.0	I-Definition	T79	T78	Direct-Defines
+the	data/source_txt/t6_sociology_1_101.deft	13819.0	13822.0	I-Definition	T79	T78	Direct-Defines
+same	data/source_txt/t6_sociology_1_101.deft	13823.0	13827.0	I-Definition	T79	T78	Direct-Defines
+sex	data/source_txt/t6_sociology_1_101.deft	13828.0	13831.0	I-Definition	T79	T78	Direct-Defines
 ;	data/source_txt/t6_sociology_1_101.deft	13831.0	13832.0	O	-1	-1	0
 bisexuality	data/source_txt/t6_sociology_1_101.deft	13833.0	13844.0	B-Term	T80	-1	0
 ,	data/source_txt/t6_sociology_1_101.deft	13844.0	13845.0	O	-1	-1	0
