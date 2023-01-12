@@ -7,7 +7,7 @@ import warnings
 
 """Evaluation script for Semeval 2020 Task 06 Subtask 01: DeftEval Sentence Classification
 How to use:
-    Used by semeval2020_06_evaluation_main.py, which is the main entry point into the evaluation scripts
+    Used by semeval2020_06_evaluation_main.py, which is the main entry point into the evaluation_subtask_3 scripts
 
 Input files:
     gold_fname: tab-separated .deft files for Subtask 1 with the following columns (no column headers):
@@ -97,7 +97,7 @@ def validate_data(gold_rows, pred_rows):
 
 
 def get_gold_and_pred_labels(gold_fname, pred_fname):
-    """Get the labels for evaluation
+    """Get the labels for evaluation_subtask_3
     Inputs:
         gold_fname: path to .deft file
         pred_fname: path to .deft file
@@ -122,7 +122,7 @@ def get_gold_and_pred_labels(gold_fname, pred_fname):
 def validate_ref_labels(eval_labels, y_gold):
     for index, label in enumerate(y_gold):
         if label not in eval_labels and label.strip() != 'O':
-            warnings.warn("Labels exist in the reference files that will not be scored given the current evaluation labels.")
+            warnings.warn("Labels exist in the reference files that will not be scored given the current evaluation_subtask_3 labels.")
             y_gold[index] = 'O'
     return y_gold
 
@@ -197,7 +197,7 @@ def task_1_eval_main(ref_path, res_path, output_dir, eval_labels):
 
     missing = [file for file in reference_files if file not in results_files]
     if len(missing) > 0:
-        message = "Missing evaluation files {0}"
+        message = "Missing evaluation_subtask_3 files {0}"
         sys.exit(message.format(str(missing)))
 
     report = evaluate(y_gold, y_pred, eval_labels)

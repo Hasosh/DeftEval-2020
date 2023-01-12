@@ -1,5 +1,5 @@
-# Configs for quickly testing that the evaluation scripts are working
-# Configs for quickly testing that the evaluation scripts are working
+# Configs for quickly testing that the evaluation_subtask_3 scripts are working
+# Configs for quickly testing that the evaluation_subtask_3 scripts are working
 
 task_1:
         do_eval: False

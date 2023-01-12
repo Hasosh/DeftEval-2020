@@ -42,7 +42,7 @@ input_dir = Path(sys.argv[0]).parents[1].joinpath("input")
 output_dir = Path(sys.argv[0]).parents[1].joinpath("output")
 
 def main(cfg):
-    """Run the evaluation script(s)
+    """Run the evaluation_subtask_3 script(s)
     Inputs:
         cfg: configuration dictionary loaded from yaml
     """

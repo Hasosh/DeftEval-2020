@@ -1,6 +1,6 @@
 """Evaluation script for Semeval 2020 Task 3: DeftEval Relation Extraction
 How to use:
-    Used by semeval2020_06_evaluation_main.py, which is the main entry point into the evaluation scripts
+    Used by semeval2020_06_evaluation_main.py, which is the main entry point into the evaluation_subtask_3 scripts
 
 Input files:
     gold_fname: tab-separated .deft files for Subtask 3 with the following columns (no column headers):
@@ -142,7 +142,7 @@ def validate_ref_relations(eval_labels, ref_rows):
     for row_index in range(len(ref_rows)):
         ref_relation = get_relation(ref_rows[row_index])
         if ref_relation is not '0' and ref_relation not in eval_labels:
-            warnings.warn("Labels exist in the reference files that will not be scored given the current evaluation labels.")
+            warnings.warn("Labels exist in the reference files that will not be scored given the current evaluation_subtask_3 labels.")
             row = remove_relation(ref_rows[row_index])
         else:
             row = ref_rows[row_index]
@@ -165,7 +165,7 @@ def validate_data(gold_rows, pred_rows, eval_relations):
 
 
 def get_gold_and_pred_relations(gold_fname, pred_fname, eval_relations, eval_labels):
-    """Get the relation pairs for evaluation
+    """Get the relation pairs for evaluation_subtask_3
     Inputs:
         gold_fname: path to .deft file
         pred_fname: path to .deft file
@@ -318,7 +318,7 @@ def task_3_eval_main(ref_path, res_path,  output_dir, eval_relations, eval_label
 
     missing = [file for file in reference_files if file not in results_files]
     if len(missing) > 0:
-        message = "Missing evaluation files {0}"
+        message = "Missing evaluation_subtask_3 files {0}"
         sys.exit(message.format(str(missing)))
 
     report = evaluate(y_gold, y_pred, eval_relations)
