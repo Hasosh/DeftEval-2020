@@ -39,14 +39,8 @@ class SentenceGetter(object):
             return None
 
 def define_tag_values(data):
-    """this method determines the tag_values and the tag2idx datastructure
+    """this method determines the tag_values and the tag2idx datastructure"""
     
-    Args:
-        data (TYPE): Description
-    
-    Returns:
-        TYPE: Description
-    """
     # create set of tag / label values and save it in a list
     tag_values = sorted(list(set(data["Tag"].values))) # sorted such that the order is always the same when the labels are the same
 
@@ -145,9 +139,7 @@ def tokenize_and_preserve_labels(sentences: list, labels: list, tokenizer, seque
     return tokenized_sentences, new_labels, input_masks, filter_masks, orig_to_tok_map
 
 def roberta_tokenize_and_preserve_labels(sentences: list, labels: list, tokenizer, sequence_length=512):
-    """this method tokenizes a sentence into 'bert-tokens' based on the wordpiece vocabulary 
-    (BERT tokenizes large words into smaller components),
-    accordingly the text labels are ordered w.r.t. these bert-tokens.
+    """this method tokenizes a sentence into 'tokens' based on BPE
     
     Args:
         sentence (list): a list containing all tokens of a sentence in the correct chronological order
@@ -240,27 +232,18 @@ def sequence_filler(sentences, labels, tokenizer, bert_model, sequence_length=51
     current_length = 0
     sentence_counter = 0
     for s, l in zip(sentences, labels):
-        #print("1", init_len, len(sentences))
         bert_length_of_current_sentence = get_length_of_bert_sentence(s, tokenizer=tokenizer, bert_model=bert_model)
-        #print("2", init_len, len(sentences))
         current_length += bert_length_of_current_sentence
-        #print("3", init_len, len(sentences))
         if current_length > sequence_length - 2: # for CLS and SEP tokens
-            #print("4", init_len, len(sentences))
             if sentence_counter != 0:
                 new_sentences.append(filled_sentences)
                 new_labels.append(filled_labels)
-
-                #print("overlength was", current_length)
-                #print("transmitted length is", get_length_of_bert_sentence(filled_sentences))
 
                 filled_sentences = s
                 filled_labels = l
 
                 current_length = bert_length_of_current_sentence
-                #print("too much length was", bert_length_of_current_sentence)
                 sentence_counter = 1
-                #print("5", init_len, len(sentences))
             else:
                 filled_sentences.extend(s)
                 filled_labels.extend(l)
@@ -273,13 +256,11 @@ def sequence_filler(sentences, labels, tokenizer, bert_model, sequence_length=51
 
                 current_length = 0
                 sentence_counter = 0
-                #print("6", init_len, len(sentences))
         else:
             filled_sentences.extend(s)
             filled_labels.extend(l)
 
             sentence_counter += 1 
-            #print("7", init_len, len(sentences))
 
     if filled_sentences:
         if not filled_labels:
@@ -331,7 +312,7 @@ def get_dataloader(path, data_kind="train", tag_values=None, bert_model="bert-ba
     # define the labels for each word of the sentences by always picking second elements of the tuples of one sentence index
     labels = [[s[1] for s in sentence] for sentence in getter.sentences]
 
-    # for development mode: take subset of dataset (1/4) -> faster computation -> easier debugging
+    # for development mode: take subset of dataset (1/8) -> faster computation -> easier debugging
     if dev:
         sentences = sentences[:int(len(sentences)/8)]
         labels = labels[:int(len(labels)/8)]
@@ -366,7 +347,7 @@ def get_dataloader(path, data_kind="train", tag_values=None, bert_model="bert-ba
                                   dtype="long", # Type of the output sequences
                                   value=0, # this is the value of the padding
                                   truncating="post", # remove values from sequences larger than maxlen, either at the beginning or at the end of the sequences
-                                  padding="post") # padding will be added at the end of arrays, pad either before or after each sequence.
+                                  padding="post") # padding will be added at the end of arrays
 
     else:
         tokenized_sentences, labels, in_masks, filt_masks, _ = roberta_tokenize_and_preserve_labels(sentences, labels, tokenizer=tokenizer, sequence_length=sequence_length)
@@ -377,7 +358,7 @@ def get_dataloader(path, data_kind="train", tag_values=None, bert_model="bert-ba
                                   dtype="long", # Type of the output sequences
                                   value=1, # this is the value of the padding in roberta
                                   truncating="post", # remove values from sequences larger than maxlen, either at the beginning or at the end of the sequences
-                                  padding="post") # padding will be added at the end of arrays, pad either before or after each sequence.
+                                  padding="post") # padding will be added at the end of arrays
 
     # look above for clearer explanation
     tags = pad_sequences([[tag2idx.get(l) for l in lab] for lab in labels],
